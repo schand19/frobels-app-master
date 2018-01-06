@@ -73,10 +73,17 @@ angular.module('Forbels', ['ionic', 'ngCordova', 'Forbels.controllers', 'Forbels
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+  .state('findSchool',{
+    url: '/findSchool',
+    templateUrl : 'templates/findSchool.html',
+    controller : 'FindSchoolController'
+  })
+
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
-    controller: 'LoginController'
+    controller: 'LoginController',
+    params:{selectedSchool: ""}
   })
 
   .state('app', {
@@ -448,12 +455,14 @@ angular.module('Forbels', ['ionic', 'ngCordova', 'Forbels.controllers', 'Forbels
 
   $urlRouterProvider.otherwise(function($injector, $location) {
     var state = $injector.get('$state');
-      if(window.localStorage.getItem('oauth') && window.localStorage.getItem('login_type')) {
+
+      state.go('findSchool');
+      /*if(window.localStorage.getItem('oauth') && window.localStorage.getItem('login_type')) {
         state.go('app.dashboard');
       }
       else {
         state.go('login');
-      }
+      }*/
   });
 
 

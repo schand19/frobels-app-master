@@ -54,15 +54,18 @@ $scope.showProfile = function() {
 
 })
 
-.controller('LoginController', ["$scope", "$state", "$ionicModal", "$cordovaToast", "$rootScope", "$filter", "LoginService", function($scope, $state, $ionicModal, $cordovaToast, $rootScope, $filter, LoginService) {
+.controller('LoginController', ["$scope", "$state", "$stateParams", "$ionicModal", "$cordovaToast", "$rootScope", "$filter", "LoginService", function($scope, $state, $stateParams, $ionicModal, $cordovaToast, $rootScope, $filter, LoginService) {
   $scope.loginData = {};
 
   $scope.forgotPasswordObj = {};
 
   $scope.changeObj = {};
 
+  $scope.selectedSchool = $stateParams.selectedSchool;
 
-
+  $scope.takeMeToFindSchool = function(){
+    $state.go('findSchool');
+  }
   $scope.doLogin = function() {
     console.log("Entered")
 
@@ -1358,6 +1361,38 @@ $scope.formattedDate = "";
       })
   }
 
+}])
+
+.controller('FindSchoolController', ['$scope','$state' , function($scope,$state){
+  $scope.enteredSchool = "";
+  //need to connect with service with spinner on
+
+  var schoolsList = [
+    "ABCD", "ABCDE","ABCDEF","MNP","XTB","AXFORD"
+  ];
+
+
+  $scope.selectASchool = function(matchingSchool){
+    $scope.enteredSchool = matchingSchool;
+    $scope.matchingSchools = [];
+  }
+
+  $scope.searchSchool = function(enteredSchool){
+    $scope.matchingSchools = [];
+    schoolsList.filter(function(school){
+      if(school.toLowerCase().indexOf(enteredSchool.toLowerCase()) != -1){
+        $scope.matchingSchools.push(school);
+      }
+    });
+  }
+
+  $scope.findSchool = function(){
+    if($scope.enteredSchool){
+      schoolsList.filter(function(){
+        $state.go('login', {selectedSchool : $scope.enteredSchool})
+      });
+    }
+  }
 }])
 
 .controller('LeaveManagementController', ["$scope", "$rootScope", "AdminService", function($scope, $rootScope, AdminService) {
