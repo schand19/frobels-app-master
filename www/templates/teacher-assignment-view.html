@@ -1,0 +1,57 @@
+<ion-view view-title="Assignments" cache-view="false">
+  <ion-content class="padding">
+    <form name="createAssignmentForm">
+      <div>
+        <p>Create Assignment :</p>
+        <hr />
+        <div>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Class
+            </div>
+            <select ng-options="(class.class_name + ' - ' + class.section) for class in classes" ng-model="seletedItem.class" required>
+              <option value="">Please choose</option>
+            </select>
+          </label>
+        </div>
+        <p>&nbsp;</p>
+        <div>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Subject
+            </div>
+            <select ng-options="subject.subject_name for subject in subjects" ng-model="seletedItem.subject" required>
+              <option value="">Please choose</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+
+      <textarea rows="5" style="width: 100%; padding: 10px;
+    border: 1px solid;" placeholder="Please give description about the assignment. So that parents will be notified about the homework" ng-model="seletedItem.message" required></textarea>
+      <div>
+        <button class="button button-block button-positive" ng-disabled="createAssignmentForm.$invalid" ng-click="createAssignment(seletedItem)"> Create Assignment </button>
+      </div>
+    </form>
+    <hr />
+    <div class="row" style="text-align: center;">
+      <a ui-sref="app.parentAssignmentView">View previously assigned assignments >>></a>
+    </div>
+
+  </ion-content>
+</ion-view>
+
+<!--
+<div class="row">
+  <div class="col-50 menu-bar-heading">
+    <a ui-sref="techercreateassignment" ui-sref-active="active">1</a>Create Assignment
+  </div>
+  <div class="col-50 menu-bar-heading">
+    <a ui-sref="teacherviewassignments" ui-sref-active="active">2</a>View Assignments
+  </div>
+</div>
+<div class="menu-content">
+  <ui-view></ui-view>
+</div>
+-->

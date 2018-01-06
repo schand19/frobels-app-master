@@ -1,0 +1,29 @@
+<ion-view view-title="Chat">
+  <ion-content class="padding">
+    <div class="row" ng-if="teachersData.length > 0">
+      <span>Please select a teacher under the Subject</span>
+    </div>
+    <ion-list ng-if="teachersData.length > 0">
+      <ion-item class="item-text-wrap item-icon-right" ng-repeat="subject in teachersData" ng-click="showDetails = !showDetails" >
+          <p>
+            <a href="javascript:void(0)" class="text-subdued-frobels">{{subject.subject_name}}</a>
+          </p>
+          <div ng-show="showDetails">
+            <div ng-repeat="emp in subject.employees">
+              <p>&nbsp;</p>
+              <a href="javascript:void(0)" ng-click="textTeacher(emp, subject.subject_name)" class="text-subdued-frobels" style="text-decoration: underline; color: #387ef5;">{{emp.emp_name}}</a>
+              <!-- <i class="icon ion-person" ui-sref="app.viewprofile({type: 'teacher', personId: {{emp.emp_id}}})"></i> -->
+              <a ui-sref="app.viewprofile({type: 'teacher', personId: {{emp.emp_id}}})" style="position: absolute; right: 105px;">Profile</a>
+              <span class="unread-highlighter" ng-if="showUnread(emp.emp_id)">.</span>
+            </div>
+          </div>
+        <i class="icon icon-accessory" ng-class="{'ion-chevron-right' : !showDetails, 'ion-chevron-down': showDetails}"></i>
+      </ion-item>
+    </ion-list>
+    <div class="card" ng-if="teachersData.length == 0">
+        <p style="text-align: center; padding: 43px;">No records found.</p>
+    </div>
+  </ion-content>
+</ion-view>
+
+<!-- <a ui-sref="app.viewprofile({type: 'teacher', personId: {{subject.emp_id}}})">view profile</a> -->

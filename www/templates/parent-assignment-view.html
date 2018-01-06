@@ -1,0 +1,32 @@
+<ion-view view-title="Assignments" cache-view="false">
+  <ion-content style = "top:40px;" >
+    <div class="padding" ng-show="assignments.length == 0">
+      <div class="card no-data-card">
+        No Assignments to show.
+      </div>
+    </div>
+    <p>&nbsp;</p>
+     <ion-list ng-show="assignments.length > 0">
+      <ion-item  style = "padding: 5px;" class="item-text-wrap" ng-repeat="assignment in assignments | filter: assignmentFilter.value">
+      <div class="row">
+          <div class="col-100 small-font-name-table">
+            <span class="bold-text">Date: </span>{{assignment.datetime}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-50 small-font-name-table" >
+            <span class="bold-text">Class:  </span>{{assignment.class_name}} 
+          </div>
+          <div class="col-50 small-font-name-table" >
+            <span class="bold-text">Subject:  </span>{{assignment.subject_name}} 
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-100 small-font-name-table">
+            <span class="bold-text">Assignment: </span>{{assignment.message}}
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'uninstall',
+1 verbose cli   '-g',
+1 verbose cli   'ionic' ]
+2 info using npm@2.15.8
+3 info using node@v4.4.7
+4 verbose unbuild lib/node_modules/ionic
+5 info preuninstall ionic@2.0.0
+6 info uninstall ionic@2.0.0
+7 verbose unbuild rmStuff ionic@2.0.0 from /usr/local/lib/node_modules
+8 silly gentlyRm /usr/local/bin/ionic is being gently removed
+9 silly gentlyRm verifying /usr/local is an npm working directory
+10 silly gentlyRm containing path /usr/local is under npm's control, in /usr/local
+11 silly gentlyRm deletion target /usr/local/bin/ionic is under /usr/local
+12 verbose gentlyRm vacuuming from /usr/local/bin/ionic up to /usr/local
+13 silly vacuum-fs removing /usr/local/bin/ionic
+14 verbose stack Error: EACCES: permission denied, unlink '/usr/local/bin/ionic'
+14 verbose stack     at Error (native)
+15 verbose cwd /Users/sarath/FrobelsGit/frobels-app
+16 error Darwin 16.4.0
+17 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "uninstall" "-g" "ionic"
+18 error node v4.4.7
+19 error npm  v2.15.8
+20 error path /usr/local/bin/ionic
+21 error code EACCES
+22 error errno -13
+23 error syscall unlink
+24 error Error: EACCES: permission denied, unlink '/usr/local/bin/ionic'
+24 error     at Error (native)
+24 error  { [Error: EACCES: permission denied, unlink '/usr/local/bin/ionic']
+24 error   errno: -13,
+24 error   code: 'EACCES',
+24 error   syscall: 'unlink',
+24 error   path: '/usr/local/bin/ionic' }
+25 error Please try running this command again as root/Administrator.
+26 verbose exit [ -13, true ]

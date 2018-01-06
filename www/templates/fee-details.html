@@ -1,0 +1,30 @@
+<ion-view view-title="Fee Details">
+  <ion-content class="padding">
+    <div ng-if="details.length == 0">
+      <div class="card" style="padding: 10px">
+        <p>No Details to show.</p>
+      </div>
+    </div>
+
+    <div ng-if="details.length > 0">
+      <div class="list">
+        <div class="item item-divider">
+          <div class="row">
+            <div class="col col-24">Due Date</div>
+            <div class="col col-24">Fees Type</div>
+            <div class="col col-24">Paid</div>
+            <div class="col col-24">Total</div>
+          </div>
+        </div>
+        <div class="item" ng-repeat="data in details">
+          <div class="row">
+            <div class="col col-24 small-font-name">{{data.DueDate}}</div>
+            <div class="col col-24 small-font-name">{{data.fees_type}}</div>
+            <div class="col col-24 small-font-name">{{data.paid}}</div>
+            <div class="col col-24 small-font-name">{{data.total}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

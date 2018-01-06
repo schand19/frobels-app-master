@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "316567637063",
+    "firebase_url": "https://frobels-edu.firebaseio.com",
+    "project_id": "frobels-edu",
+    "storage_bucket": "frobels-edu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316567637063:android:e8075639c37e67aa",
+        "android_client_info": {
+          "package_name": "com.frobelsedu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316567637063-65pdlgg2bgjc615krd7hjtq5r61ibb2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8v8O5ga1I21ZGQVG294TOyxhNaVlGF80"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

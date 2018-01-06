@@ -1,0 +1,42 @@
+<ion-view view-title="View Leaves">
+  <ion-content class="padding">
+    <h5>Number of Leaves applied till data: {{noOfDays}}</h5>
+    <div class="card" ng-if="details.length == 0" style="padding: 10px;">
+      You haven't applied for any leaves in the past.
+    </div>
+    <div class="list" ng-if="details.length > 0">
+      <div class="item item-divider">
+        <div class="row">
+          <div class="col col-24">
+            From
+          </div>
+          <div class="col col-24">
+            To
+          </div>
+          <div class="col col-24">
+            Status
+          </div>
+          <div class="col col-24">
+            Reason
+          </div>
+        </div>
+      </div>
+      <div class="item item-text-wrap" ng-repeat="detail in details">
+        <div class="row">
+          <div class="col col-24 small-font-name-table" style="margin-left: -10px;">
+            {{detail.from_date}}
+          </div>
+          <div class="col col-24 small-font-name-table">
+            {{detail.to_date}}
+          </div>
+          <div class="col col-24 small-font-name-table">
+            {{detail.status}}
+          </div>
+          <div class="col col-24 small-font-name-table">
+            {{detail.leave_desc}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

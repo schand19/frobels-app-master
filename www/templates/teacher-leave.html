@@ -1,0 +1,29 @@
+<ion-view view-title="Apply Leave">
+  <ion-content class="padding">
+    <form name="applyleaveform">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">From Date</span>
+          <input type="date" ng-model="applyObj.from" required />
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">To Date</span>
+          <input type="date" ng-model="applyObj.to" required />
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Number of Days</span>
+          <input type="number" ng-model="applyObj.days" required />
+        </label>
+        <label class="item item-input item-stacked-label">
+          <textarea rows="5" style="width: 100%" placeholder="Please give the description" ng-model="applyObj.desc" required></textarea>
+        </label>
+      </div>
+      <button class="button button-block button-positive" ng-disabled="applyleaveform.$invalid" ng-click="applyLeave(applyObj)">
+        Apply Leave
+      </button>
+    </form>
+    <div>
+      <a ui-sref="app.teacherviewleaves">View applied leaves >>></a>
+    </div>
+  </ion-content>
+</ion-view>

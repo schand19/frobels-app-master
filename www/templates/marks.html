@@ -1,0 +1,27 @@
+<ion-view view-title="Exams" class="background-color: #dce2ed">
+  <ion-content style="background-color: #f0f5f5">
+    <div class="padding">
+      <div class="row">
+        <h1>Results</h1>
+      </div>
+      <ion-list>
+        <div ng-show="exams.length == 0">
+          <div class="card no-data-card">
+            No Results to show.
+          </div>
+        </div>
+        <ion-item class="item-icon-right" ng-repeat="exam in exams" ng-click="goToDetail(exam.exam_id)">
+          {{exam.exam_name}}
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>
+<!--
+<ion-item ng-repeat="record in marks">
+  {{record.subject_name}} {{record.marks}} 100
+</ion-item>
+
+
+-->

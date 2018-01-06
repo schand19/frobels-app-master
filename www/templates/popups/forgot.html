@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-forbels">
+    <h1 class="title">Forgot Password</h1>
+    <button class="button button-clear" ng-click="forgotModal.hide()">Cancel</button>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list">
+       <label class="item item-input">
+         <span class="input-label">Admission Number</span>
+         <input type="text" ng-model="forgotPasswordObj.admission_no" type="text">
+       </label>
+       <label class="item item-input">
+         <span class="input-label">Date of birth</span>
+         <input type="date" ng-model="forgotPasswordObj.dob" type="text">
+       </label>
+       <label class="item item-input">
+         <span class="input-label">Mobile number</span>
+         <input type="number" ng-model="forgotPasswordObj.mobile_no">
+       </label>
+      <button class="button button-full button-positive" ng-click="submitForgotPassword(forgotPasswordObj)">Submit</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

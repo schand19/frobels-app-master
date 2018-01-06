@@ -1,0 +1,42 @@
+
+<ion-view view-title="Attendance">
+  <ion-content style="background-color: #f0f5f5">
+
+    <div class="padding" ng-show="attendanceDetails.length == 0">
+      <div class="card no-data-card">
+        Attendance details are not updated yet.
+      </div>
+    </div>
+
+    <div class="padding" ng-show="attendanceDetails.length > 0">
+      <div class="row" style="font-weight: bold">
+        <div class="col col-50">Attendence Date</div>
+        <div class="col col-50">Attendence</div>
+      </div>
+      <div ng-repeat="record in attendanceDetails">
+        <div class="row">
+          <div class="col col-50">{{record.att_date}}</div>
+          <div class="col col-50">{{record.attendance}}</div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+<!--
+
+<table class="padding">
+  <theader>
+    <tr>
+      <th>Attendance Date</th>
+      <th>Attendance</th>
+    </tr>
+  </theader>
+  <tbody>
+    <tr ng-repeat="record in attendanceDetails">
+      <td>{{record.att_date}}</td>
+      <td>{{record.attendance}}</td>
+    </tr>
+  </tbody>
+</table>
+-->

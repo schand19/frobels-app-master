@@ -1,0 +1,13 @@
+<ion-view view-title="Contact Us">
+  <ion-content class="padding">
+    <div class="card contact-us-card">
+      <p class="contact-us-header">{{schoolDetails.school_name.toLowerCase()}}</p>
+      <p><span>Address:</span>{{schoolDetails.address}}</p>
+      <p><span>Email&nbsp;Id:</span>{{schoolDetails.email_id}}</p>
+      <p><span>Mobile:</span>&nbsp;&nbsp;<a href="tel:+{{schoolDetails.mobile_no}}">{{schoolDetails.mobile_no}}</a> </p>
+      <p>
+        <span>Tel:</span>&nbsp;&nbsp;<a ng-href="tel:{{schoolDetails.telephone_no}}">{{schoolDetails.telephone_no}}</a>
+      </p>
+    </div>
+  </ion-content>
+</ion-view>

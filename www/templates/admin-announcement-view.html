@@ -1,0 +1,73 @@
+<ion-view view-title="Announcements">
+  <ion-content class="padding">
+    <form name="createAnnouncementForm">
+      <div>
+        <p>Create Announcement :</p>
+        <hr />
+        <div>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              From
+            </div>
+            <select ng-model="assignment.from" required>
+              <option value="">Please choose</option>
+              <option value="Chairman">Chairman</option>
+              <option value="Secretary">Secretary</option>
+              <option value="Principal">Principal</option>
+              <option value="Staff">Staff</option>
+              <option value="Director">Director</option>
+              <option value="Administration">Administration</option>
+            </select>
+          </label>
+        </div>
+        <p>&nbsp;</p>
+        <div>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              To
+            </div>
+            <select ng-model="assignment.to" required>
+              <option value="">Please choose</option>
+              <option value="All">All</option>
+              <option value="Teachers">Teachers</option>
+              <option value="Parents">Parents</option>
+            </select>
+          </label>
+        </div>
+        <p>&nbsp;</p>
+        <div>
+          <label class="item item-input">
+            <div class="input-label">
+              Subject
+            </div>
+            <input type="text" ng-model="assignment.subject" required />
+          </label>
+        </div>
+        <p>&nbsp;</p>
+        <div>
+          <label class="item item-input">
+            <div class="input-label">
+              Message
+            </div>
+            <input type="text" ng-model="assignment.message" required />
+          </label>
+        </div>
+        <p>&nbsp;</p>
+        <div>
+          <label class="item item-input">
+            <div class="input-label" required />
+              Date
+            </div>
+            <input type="date" ng-model="assignment.date" />
+          </label>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+
+      <div>
+        <button class="button button-block button-positive" ng-disabled="createAnnouncementForm.$invalid" ng-click="createAnnouncement(assignment)"> Create Announcement </button>
+      </div>
+    </form>
+    <a href="#/app/notifications/C">View Announcements >>> </a>
+  </ion-content>
+</ion-view>

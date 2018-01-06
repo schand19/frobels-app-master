@@ -1,0 +1,143 @@
+<ion-view view-title="Profile" cacha-view="false">
+  <ion-content style="background-color: #f0f5f5">
+    <div class="padding" ng-if="type == 'teacher'">
+      <div class="row">
+        <div class="col-50">
+          <p class="subdued">Employee Name :</p>
+          <p>{{data.emp_name || '-'}}</p>
+        </div>
+        <div class="col-50">
+          <p>Subject :</p>
+          <p>{{data.subject_name || '-'}}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-50">
+          <p>Year of Joining :</p>
+          <p>{{data.emp_doj || '-'}}</p>
+        </div>
+        <div class="col-50">
+          <p>DOB :</p>
+          <p>{{data.emp_dob || '-'}}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-50">
+          <p>Qualification :</p>
+          <p>{{data.emp_qualification || '-'}}</p>
+        </div>
+        <div class="col-50">
+          <p>Class handling :</p>
+          <p>-</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <p>Phone :</p>
+        <p ng-if="data.emp_phone_no.length == 10">
+          <a href="tel:{{data.emp_phone_no}}">{{data.emp_phone_no}}</a>
+          <!-- {{data.phone_number || '-'}} -->
+        </p>
+        <p ng-if="data.emp_phone_no.length != 10">
+          -
+        </p>
+      </div>
+    </div>
+    <div class="padding" ng-if="type == 'parent'">
+      <div class="row">
+        <div class="col-50">
+          <p>Student Name :</p>
+          <p>{{data.student_first_name}} {{data.student_last_name}}</p>
+        </div>
+        <div class="col-50">
+          <p>Father Name :</p>
+          <p>{{data.father_name || '-'}}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-50">
+          <p>Address :</p>
+          <div ng-repeat="line in data.address.split(':')">
+            <p>{{line}}</p>
+          </div>
+        </div>
+        <div class="col-50">
+          <p>Admission Number :</p>
+          <p>{{data.admission_num || '-'}}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-50">
+          <p>Phone Number :</p>
+          <p ng-if="data.phone_number.length == 10">
+            <a href="tel:{{data.phone_number}}">{{data.phone_number}}</a>
+            <!-- {{data.phone_number || '-'}} -->
+          </p>
+          <p ng-if="data.phone_number.length != 10">
+            -
+          </p>
+        </div>
+        <div class="col-50">
+          <p>class/Section :</p>
+          <p>{{data.class_name}}/{{data.section}}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <p>Joined Date :</p>
+        <p>{{data.registration_date || '-'}}</p>
+      </div>
+    </div>
+       <div class="padding" ng-if="type == 'parentType'">
+      <div class="row">
+        <div class="col-50">
+          <p>Student Name :</p>
+          <p>{{data.student_first_name}} {{data.student_last_name}}</p>
+        </div>
+        <div class="col-50">
+          <p>Father Name :</p>
+          <p>{{data.father_name || '-'}}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-50">
+          <p>Address :</p>
+          <div ng-repeat="line in data.address.split(':')">
+            <p>{{line}}</p>
+          </div>
+        </div>
+        <div class="col-50">
+          <p>Admission Number :</p>
+          <p>{{data.admission_num || '-'}}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-50">
+          <p>Phone Number :</p>
+          <p ng-if="data.phone_number.length == 10">
+            <a href="tel:{{data.phone_number}}">{{data.phone_number}}</a>
+            <!-- {{data.phone_number || '-'}} -->
+          </p>
+          <p ng-if="data.phone_number.length != 10">
+            -
+          </p>
+        </div>
+        <div class="col-50">
+          <p>class/Section :</p>
+          <p>{{data.class_name}}/{{data.section}}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <p>Joined Date :</p>
+        <p>{{data.registration_date || '-'}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,47 @@
+<ion-view view-title="Chat">
+  <ion-nav-buttons side="right">
+    <a ng-if="phoneNumber.length == 10" class="button button-icon button-clear ion-ios-videocam" style="position: absolute;right: 42px;" href="javascript:void(0)" ng-click="openwhatsapp(phoneNumber)">
+    </a>
+    <a ng-if="phoneNumber.length == 10" class="button button-icon button-clear ion-ios-telephone" ng-href="tel:{{phoneNumber}}">
+    </a>
+  </ion-nav-buttons>
+  <ion-content style = "bottom: 40px;" class="padding" style="background-color: #f0f5f5">
+    <div ng-repeat="message in messages" ng-class="{'other': (message.id != myId || (message.type == myType && !(message.newM)))}" class="messages">
+      <div class="message">
+        <span class="message-span">
+          {{message.text}}
+        </span>
+      </div>
+    </div>
+    <p style = "color: red; font-weight: bold;">{{messages[messages.length-1].datetime}}</p>
+  </ion-content>
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" ng-if="footer.view">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Please enter your message" ng-model="data.message">
+    </label>
+    <button class="button button-calm" ng-click="sendMessage()">Send</button>
+  </ion-footer-bar>
+</ion-view>
+
+<!--
+(message.id != myId)
+
+message.id != myId && message.type != myType
+
+message.id != myId || message.type != myType
+
+Please send the message to {{teacher.emp_name}}
+<div>
+  <ion-item>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+  </ion-item>
+  <ion-item>
+    <button class="button button-positive">Send Message</button>
+  </ion-item>
+  <div class="fixed-chat-footer">
+    <input type="text" class="text" size="45" placeholder="Please type message">
+  </div>
+</div>
+<input type="text" class="footer-fixed-input" placeholder="Please type message">
+<button class="button button-positive ">Send</button>
+-->

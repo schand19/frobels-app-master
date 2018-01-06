@@ -1,0 +1,34 @@
+<ion-view view-title="{{exam_name}}" class="background-color: #dce2ed">
+  <ion-content style="background-color: #f0f5f5">
+    <div class="padding">
+      <div class="row" style="font-weight: bold">
+        <div class="col col-25">Subject</div>
+        <div class="col col-25">Obtained</div>
+        <div class="col col-25">Total</div>
+        <!--<div class="col col-25">Grade</div>-->
+      </div>
+      <div ng-repeat="record in marks">
+        <div class="row">
+          <div class="col col-25">{{record.subject_name}}</div>
+          <div class="col col-25">{{record.marks_scored}}</div>
+          <div class="col col-25">{{record.marks_total}}</div>
+          <!--<div class="col col-25">{{record.subject_grade}}</div>-->
+        </div>
+        <hr>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col col-25">Grand Total</div>
+          <div class="col col-25">{{total.total}}</div>
+          <div class="col col-25">{{total.marks_total}}</div>
+        </div>
+         <div class="row">
+          <div class="col col-25">Grade</div>
+          <div class="col col-25">{{total.grade}}</div>
+          <div class="col col-25">Average</div>
+          <div class="col col-25">{{total.average}}</div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

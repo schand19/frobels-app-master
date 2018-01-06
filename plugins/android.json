@@ -1,0 +1,39 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        },
+        "cordova-plugin-cocoapod-support": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.frobelsedu"
+        }
+    },
+    "dependent_plugins": {}
+}

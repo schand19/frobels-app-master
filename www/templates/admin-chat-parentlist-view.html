@@ -1,0 +1,19 @@
+<ion-view view-title="Parents List">
+  <ion-content class="padding">
+    <div class="row" ng-if="parentsList.length > 0">
+      <h4>Please select a parent to view the Conversation</h4>
+    </div>
+    <ion-list ng-if="parentsList.length > 0">
+      <ion-item class="item-text-wrap item-icon-right" ng-repeat="parent in parentsList">
+        <a href="javascript:void(0)" class="text-subdued-frobels" ng-click="viewConversation(teacherId, parent)" style="text-decoration: underline; color: #387ef5;">{{parent.father_name}}</a>
+        <i class="icon ion-person" style="position: absolute; right: 25px;" ui-sref="app.viewprofile({type: 'parentType', personId: {{parent.parent_id}}})"></i>
+        <span class="unread-highlighter" ng-if="showUnread(parent.parent_id)">.</span>
+        <i class="icon icon-accessory ion-chevron-right"></i>
+      </ion-item>
+    </ion-list>
+    <div class="card" ng-if="parentsList.length == 0">
+        <p style="text-align: center; padding: 43px;">No messages to show.</p>
+      </div>
+    </ion-card>
+  </ion-content>
+</ion-view>

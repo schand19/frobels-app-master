@@ -1,0 +1,24 @@
+<ion-view view-title="Inbox">
+  <ion-content class="padding">
+      <div>
+        <span>Click on this icon <i class="icon ion-person"></i> to view profile</span>
+      </div>
+    <div class="row" ng-if="parentsList.length > 0">
+      <span>Please select a parent to text</span>
+    </div>
+    <ion-list ng-if="parentsList.length > 0">
+      <ion-item class="item-text-wrap item-icon-right" ng-repeat="parent in parentsList">
+        <a href="javascript:void(0)" style="text-decoration: underline; color: #387ef5;" ng-click="textParent($index)">{{parent.father_name}}</a>
+        <span ng-if="parent.type != 'admin'"><i class="icon ion-person" style="position: absolute; right: 35px;" ui-sref="app.viewprofile({type: 'parentType', personId: {{parent.parent_id}}})"></i></span>
+        <span class="unread-highlighter" ng-if="showUnread(parent.parent_id)">.</span>
+        <i class="icon icon-accessory ion-chevron-right"></i>
+      </ion-item>
+    </ion-list>
+    <div class="card" ng-if="parentsList.length == 0">
+        <p style="text-align: center; padding: 43px;">No messages to show.</p>
+      </div>
+    </ion-card>
+  </ion-content>
+</ion-view>
+
+<!-- <a ui-sref="app.viewprofile({type: 'parent', personId: {{parent.parent_id}}})">view profile</a>-->

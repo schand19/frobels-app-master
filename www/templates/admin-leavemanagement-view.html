@@ -1,0 +1,62 @@
+<ion-view view-title="Leave Management" cache-view="clear">
+  <ion-content class="padding">
+    <ion-list ng-if="leaveDetails.length > 0">
+      <ion-item class="item-text-wrap" ng-repeat="leave in leaveDetails">
+        <div class="row">
+          <div class="small-font-name-table">Employee Name: {{leave.emp_name}}</div>
+        </div>
+        <div class="row">
+          <div class="col-100">
+            <div class="small-font-name-table">From: {{leave.from_date}}</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-100">
+            <div class="small-font-name-table">To: {{leave.to_date}}</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-100">
+            <div class="small-font-name-table">
+              Number of days: {{ leave.no_of_days }}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-100">
+            <div class="small-font-name-table">
+              Reason: {{ leave.leave_desc }}
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row" ng-if="leave.status == 'Pending'">
+          <div class="col-100">
+            <button class="button button-small button-positive" ng-click="updateDetails(leave.leave_id, 'Approved')">
+              Approve
+            </button>
+            <button class="button button-small button-assertive" ng-click="updateDetails(leave.leave_id, 'Rejected')">
+              Reject
+            </button>
+          </div>
+        </div>
+
+        <div class="row" ng-if="leave.status != 'Pending'">
+          <div class="col-100">
+            <div class="small-font-name-table">
+              Status: {{leave.status}}
+            </div>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <div class="card" ng-if="leaveDetails.length == 0">
+      <p style="text-align: center; padding: 43px;">No messages to show.</p>
+    </div>
+
+  </ion-content>
+</ion-view>

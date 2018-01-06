@@ -1,0 +1,48 @@
+<ion-view view-title="Fee Details" cache-view="clear">
+  <ion-content class="padding">
+    <form name="selectClassform">
+      <div>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Class
+          </div>
+          <select ng-options="(class.class_name + ' - ' + class.section) for class in classes" ng-model="seletedClass.value" required>
+            <option value="">Please choose</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <button class="button button-block button-positive" ng-disabled="selectClassform.$invalid" ng-click="getFeeDetails(seletedClass)"> Get Updated fee </button>
+      </div>
+    </form>
+    <p>&nbsp;</p>
+    <hr />
+    <div ng-show="feeview.display">
+      <div class="card" ng-if="feeData.length == 0">
+        No Fee details to display.
+      </div>
+      <div class="card" ng-if="feeData.length > 0">
+        <div class="card" ng-repeat="record in feeData">
+          <div class="padding">        
+              <div class="row">
+                <div class="col col-50">Fee Type</div>
+                <div class="col col-50">{{record.fees_type}}</div>
+              </div>
+               <div class="row">
+                <div class="col col-50">Paid fee</div>
+                <div class="col col-50">{{record.paid_fee}}</div>
+              </div>
+              <div class="row">
+                <div class="col col-50">Pending fee</div>
+                <div class="col col-50">{{record.pending_fee}}</div>
+              </div>
+              <div class="row">
+                <div class="col col-50">Total fee</div>
+                <div class="col col-50">{{record.total_fee}}</div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,52 @@
+<ion-view view-title="Marks" cache-view="clear">
+  <ion-content class="padding">
+    <form name="selectClassform">
+      <div>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Class
+          </div>
+          <select ng-options="(class.class_name + ' - ' + class.section) for class in classes" ng-model="seletedClass.value" required>
+            <option value="">Please choose</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <button class="button button-block button-positive" ng-disabled="selectClassform.$invalid" ng-click="getMarks(seletedClass)"> Get Marks </button>
+      </div>
+    </form>
+    <p>&nbsp;</p>
+    <hr />
+    <div ng-show="marksdiv.display">
+      <div class="card" ng-if="$scope.studentMarks.length == 0">
+        No Details to show.
+      </div>
+      <div class="card" ng-repeat="record in studentMarks">
+        <div class="padding">
+          <div class="row" style="font-weight: bold">
+            <div class="col col-50">Subject</div>
+            <div class="col col-50">Subject average</div>
+            <!--<div class="col col-25">Grade</div>-->
+          </div>
+          <div >
+            <div ng-repeat= "data in record" class="row">
+              <div class="col col-50">{{data.subject_name}}</div>
+              <div class="col col-50">{{data.avg}}</div>
+              <!--<div class="col col-25">{{record.subject_grade}}</div>-->
+            </div>
+            <div>
+              <div class="row">
+                <div class="col col-50">Class average</div>
+                <div class="col col-50">{{classAverage[$index]}}</div>
+              </div>
+               <div class="row">
+                <div class="col col-50">Exam</div>
+                <div class="col col-50">{{examname[$index]}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
