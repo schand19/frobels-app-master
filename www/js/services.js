@@ -16,7 +16,6 @@ angular.module('Forbels.services', [])
     }).then(
       function(response) {
         deferred.resolve(response);
-        console.log(response);
       },
       function(error) {
         deferred.reject(error);
@@ -34,7 +33,6 @@ angular.module('Forbels.services', [])
       password: requestParams.password,
       token: requestParams.token
     }
-    console.log(dataObj);
     var deferred = $q.defer();
     $http({
       method: 'GET',
@@ -43,7 +41,6 @@ angular.module('Forbels.services', [])
     }).then(
       function(response) {
         deferred.resolve(response);
-        console.log(response);
       },
       function(error) {
         deferred.reject(error);
@@ -123,7 +120,6 @@ angular.module('Forbels.services', [])
       }).then(
         function(response) {
           deferred.resolve(response);
-          console.log(response);
         },
         function(error) {
           deferred.reject(error);
@@ -149,7 +145,6 @@ angular.module('Forbels.services', [])
       }).then(
         function(response) {
           deferred.resolve(response);
-          console.log(response);
         },
         function(error) {
           deferred.reject(error);
@@ -170,7 +165,6 @@ angular.module('Forbels.services', [])
       }).then(
         function(response) {
           deferred.resolve(response);
-          console.log(response);
         },
         function(error) {
           deferred.reject(error);
@@ -191,7 +185,6 @@ angular.module('Forbels.services', [])
       }).then(
         function(response) {
           deferred.resolve(response);
-          console.log(response);
         },
         function(error) {
           deferred.reject(error);
@@ -218,7 +211,6 @@ angular.module('Forbels.services', [])
       }).then(
         function(response) {
           deferred.resolve(response);
-          console.log(response);
         },
         function(error) {
           deferred.reject(error);
