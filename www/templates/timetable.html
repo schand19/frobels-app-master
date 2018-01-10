@@ -6,7 +6,7 @@
             </div>
         </div>
         <div ng-if="timetableData.length > 0">
-            <input style=" width:100%; padding:20px;" type="text" name="datepicker" ng-model="selectedDate" placeholder="search: date, class, number" />
+            <input style=" width:100%; padding:20px;" type="text" name="datepicker" ng-model="searchData" placeholder="search: Date, Class, Period" />
             <div ng-if="timetableData.length > 0">
                 <div class="list">
                     <div class="item item-divider" style=" padding: 0px;">
@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     {{selctedDate}}
-                    <ion-item class="row" style=" padding: 0px;" ng-repeat="data in timetableData | filter:selectedDate">
+                    <ion-item class="row" style=" padding: 0px;" ng-repeat="data in timetableData | filter:searchData">
                         <div style="font-size: 12px; text-align: center;" class="col col-33">{{data.date }}</div>
                         <div style="font-size: 12px; text-align: center;" class="col col-33">{{data.class_name}}-{{data.section}}</div>
                         <div style="font-size: 12px; text-align: center;" class="col col-33">{{data.period}}</div>
