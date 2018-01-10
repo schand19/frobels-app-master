@@ -1,10 +1,10 @@
 <ion-view view-title="Dashboard" cache-view="false">
-  <ion-nav-buttons side="right">
-    <button class="button button-icon button-clear ion-person-stalker" ng-click="studentSelect()" ng-if="childDetails.length > 1">
-    </button>
-  </ion-nav-buttons>
-  <ion-content>
-    <!-- <div class="img-slider" ng-if="imageSlides.length > 0">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-person-stalker" ng-click="studentSelect()" ng-if="childDetails.length > 1">
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <!-- <div class="img-slider" ng-if="imageSlides.length > 0">
       <ion-slide-box show-pager="false" does-continue="true" auto-play="true" on-slide-changed="slideHasChanged($index)" active-slide="currentIndex">
         <ion-slide ng-repeat="images in imageSlides">
              <img ng-src="{{ImagesAPI}}{{images.image_src}}" width="60px" height="60px">
@@ -12,184 +12,186 @@
         </ion-slide>
       </ion-slide-box>
     </div> -->
-    <div ng-if="loginDetails.login_type == 'admin'">
-      <div class="row" style="text-align: center">
-          <div class="col col-33">
-              <a href="#/app/adminresults">
+        <div ng-if="loginDetails.login_type == 'admin'">
+            <div class="row" style="text-align: center">
+                <div class="col col-33">
+                    <a href="#/app/adminresults">
               <img src="img/results.png" width="60px" height="50px">
               <p class="subdued">Results</p>
             </a>
-          </div>
-          <div class="col col-33">
-              <a href="#/app/adminattendance">
+                </div>
+                <div class="col col-33">
+                    <a href="#/app/adminattendance">
               <img src="img/attendance.png" width="60px" height="50px">
               <p class="subdued">Attendance</p>
             </a>
-          </div>
-          <div class="col col-33">
-              <a href="#/app/adminannouncements">
-              <img src="img/Announ.jpeg" width="60px" height="50px">
-              <p class="subdued">Announcement</p>
-            </a>
-          </div>
-      </div>
-      <div class="row" style="text-align: center">
-          <div class="col col-33">
-              <a ui-sref="app.adminchat({teachers: {{teachersList}}})">
-              <img src="img/chat_with_teacher.png" width="60px" height="50px">
-              <p class="subdued">Online Teacher</p>
-            </a>
-          </div>
-          <div class="col col-33">
-              <a href="#/app/image-gallery">
-              <img src="img/image_gallery.png" width="60px" height="50px">
-              <p class="subdued">Image Gallery</p>
-            </a>
-          </div>
-          <div class="col col-33">
-              <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/Frobels-Residential-High-School-1244461868958871', '_system', 'location=yes'); return false;">
-              <img src="img/facebook.png" width="60px" height="50px">
-              <p class="subdued">Facebook</p>
-            </a>
-          </div>
-      </div>
-      <!-- https://www.facebook.com/Frobels-Residential-High-School-1244461868958871  openFacebookPage()-->
-      <div class="row" style="text-align: center">
-          <div class="col col-33" href="javascript:void(0)">
-              <a href="javascript:void(0)" onclick="window.open('https://www.youtube.com/watch?v=MCoOoxmdHDk', '_system', 'location=yes'); return false;">
-              <img src="img/youtube.png" width="60px" height="50px">
-              <p class="subdued">YouTube</p>
-            </a>
-          </div>
-          <!-- ng-click="parentAssignments()" -->
-          <div class="col col-33">
-              <a ui-sref="app.adminassignment({teachers: {{teachersList}}})">
+                </div>
+                <div class="col col-33">
+                    <a href="#/app/adminannouncements">
+                        <!-- <img src="img/Announ.jpeg" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,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">
+                        <p class="subdued">Announcement</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="text-align: center">
+                <div class="col col-33">
+                    <a ui-sref="app.adminchat({teachers: {{teachersList}}})">
+                        <!-- <img src="img/chat_with_teacher.png" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,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">
+                        <p class="subdued">Online Teacher</p>
+                    </a>
+                </div>
+                <div class="col col-33">
+                    <a href="#/app/image-gallery">
+                        <!-- <img src="img/image_gallery.png" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQgSURBVGhD7ZlZbExhGIbbM7VGwo0tggZx5cKSEnEjEWJJiCuldhViD6o3lib2SFCk9rWYM63qpmg71BpC7VstpZQLNIKZM9NO6ef7/nOmc2bmU2M4MzfnTZ5kMuf/3/995+yZGFOmTJkyZcrUf1CcTRlokZ3pFtmxNzyc6XGykqDZRUlWdzyGcVlsTvgn0CMmy9VNc428JJtjAhssDMhLs428cPFJXKhwIC/N9v8rTv4+RJIdyySbM5UDA1gDA/0DVm4NAWagLFqsvxMaTGEWix6yowELJWnxQhdOOscaRhHKpMULXZLsvMqZhUrrbCf0OKPAwBKXoEehIr7jxgbSIVeBMVfc0CVf8fueMmnxQle4RRIw9KqHHjhV/QMKP/hD363EbQNwDDeX6F3kgpq6BiB98zRA/2Lf2IgU6Yi/4vonHr/gmRUO2HrzI2xD6LN+2zoc2x7nBPqselgnSni1/bmncZvhRXoXKXD0Tb0ImFNVCzNP3Ifui7MhdsJ+P+KXZEOy9YEYQ2NpTi+cq/dKulGrVVC16E5d4zZDi9CeOF6llthx+zN0micHFQikM47ZWf5ZLYNzycPrF4ekPaqDGzU/YfMzD7TUnVeGFaFFt+BiFCj91idoNfUIG5yDxtIcmrvpqe/waQrDigyxu0SQrEo3tJ9zkg0cRCJxQHymOdlv1MNsMHpxa+gxrMhG/CUpRNLh8uDAeqYeg9j5eSAtLwYp9YJKSinELiqEYbtuCo8NIewVQ4q0y1Eg//0PKEA6zLXyBRIPqgW84RmaYSEqkoc+5Mmt5cWQIv3w+k4BMu7W8CUmHgBp8Vk2fCBpVz4Ir77nmz68DCkyrMwtFl9b9o4vsqCADc0x41SF8CJPbi0vhhQZcUktstpeFVxiWiYb+HdMlp8Kr+HRKEKPGbQ4XUKDiiwMfW8QqfZq4aV/HOEwpEjHPAUKcPH86npoOzPTrwhdkbjAHJaUEsh96xFe3COLHkOKENufq3f0sbuu+4pMOsQG/h09110SHtsq6tk19BhWZPRl9TyhB8I204+qRSYfYQNzWFaUQsb9L8JjJHpxa+gxrEjzLCfsfqXeFOmkt+All+7aXGiOJO0kz3jpEV7cGnoMK0LQ06v33WNlyWtoPQ33yNJzbHAvtCcSTz4Rc2guvXRx3oEYWoQYhFewHK3Mocdfoc/6MpAwbFCJFXbomlYGW8trGkvQXM6Tw/AiBL2T7Kv0vVjJlS6YnfsSRu2/i9yD5NMvQH6tnlMEjQ18F/kTESlCtMDjfPy1WtijnTcctG3c1VoxlvNoiogV0RNf6IKhF90wHkMT9LlbQeiHEUd4RWxOO2cWTTBTqRYvdOGkFM4smmCm5Vq8v9AakHBXJltsjj2+vwCiBGbAErMok5bOlClTpkyZMhWsmJhf/7iE+Nps5G4AAAAASUVORK5CYII=">
+                        <p class="subdued">Image Gallery</p>
+                    </a>
+                </div>
+                <div class="col col-33">
+                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/Frobels-Residential-High-School-1244461868958871', '_system', 'location=yes'); return false;">
+                        <!-- <img src="img/facebook.png" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIPSURBVGhD7ZnLSwJRGMWl/ojqj9GpVtEDZgTtvWghVKsWQcuQWkUPCAqEoNBdrcqZygKF3mEPMip30SIqjKDIIiJvc/VzpPwEnSHvTNwDv5V3jufMfSzm2ri4uLj+l1yuxUpBCrY5JCXgEJXNMuO3O5VW2/BwBcTRJ7u0VuMQ5aggKYQxh4JLroZYpYnOhDoLB4gpK/Z0zQxdTogZU9LLrFTRPYGZsYTuGYhXvARRCWNmTFEzQbzi5ZDkbdSMITQTxCtef12koz9CRiZPyfTcBfH54xp9Q7voeIqpirg9YXIceySF5AvE0ecopinS2Bkit/dJiIzLEkVm5y8hbmFZosjxWf6S+vpKkfOrJ3J0lkjjnThFn6WYpsjdwxvEz4nOEjYWwzRFnl8+IH5OQ6NRdCyGaYq8Jj8hfk6WKFLnXCXtvRGN5Ft+kbGZ2I8xTV0bqBeFWRF63Jaq0SkTbnY9RTyDO6gXxTJFUilCGtrXUS+KZYo8JN5RnyzMitQ6FdLcvaGBnVre8RPtd1oc88nCrMhvLHv8/oYXAXgRzMwIvAjAi2BmRuBFAF4EMzMCkyJ/8cnUaBF9n0xFxY+aGWApeE1WQjc/6BnYQsdi6PuIbcJrBUGSXRCveGWu3JS9fDNm6LvooYKrt33EtNzs1rcsV0EsnVLfglrGrZotwAVl2cj8p+w2fBnKxcXFZTLZbN9S86sn1aGunQAAAABJRU5ErkJggg==">
+                        <p class="subdued">Facebook</p>
+                    </a>
+                </div>
+            </div>
+            <!-- https://www.facebook.com/Frobels-Residential-High-School-1244461868958871  openFacebookPage()-->
+            <div class="row" style="text-align: center">
+                <div class="col col-33" href="javascript:void(0)">
+                    <a href="javascript:void(0)" onclick="window.open('https://www.youtube.com/watch?v=MCoOoxmdHDk', '_system', 'location=yes'); return false;">
+                        <!-- <img src="img/youtube.png" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKcSURBVGhD7Zk7aBRRFIZP0kmamFpDsAwaGxFxZ3ctomIp+KiinWmsFRIIVjFgE7cQkm3FgGjrg2Djo7AwWCQgFis2iggiJtgY7vG/w1nQeI57JztxZ/B+8LPMzn18Z2dmd/YORSKRSCQS6QJ3hIZchQ66Kp1EziOT2L7KVZrzwXYDWdiSRrovoetp24QuuRqdw/sn8N4YtnfL8PnCRP2Y5DAmmUKayCNsr+F1A0K8E8HY6zKHn2sRr1PeAS59opUNfDr7MMgLbbJeBMU8906iF0Z62iT0Thuwl4FTy7uJZmdQvT+X1cF6HbjdFM2/489FNP6kDVKEpG64dkXXxtVpjzZAkYJi9oquDVco0ToXKhU6Jro2uKAm1M6hOT7APL5L35dX8PsjujYoZEbtHJqLB5g/tJinT+v788mc6Nrg/LuldAyPL6TNqyfME6N6uy4CxyXRtcERua11Ds6vhXg2fzDfazCfGtTbbyMoZFl0bVDIfa1zcLYW0ubrZ+Ybk8z1fr1fhsBxRXRtUO1DrXNwrELavF1hvlzT+wYGhbRE1waFPNM6B6dTIR7nmJfvMJ8Z1sfoEDi+F10bNHqtdQ5OSCFtvq8zN6czf13D8Yvo2pSikIQ+iq5NSU6tN6Jrg0ZluNhfiq5NSb5+H4uuDRoV/gcRuSu6Nji1in+LklBTdG3QqAw3jddE1waFFP423lXogujalOGPlatRVXRtSvFXF46ia1OSxYewxTo0Lu5yUELzotkZWaBraQP1MqlT1vVhrtMIjkx39105BkU89U6il430ejlKhzCIX0heRB4gq8g3bbI8grn+XMSGQ/B1kRV8OoP49tiPQz2OnPVLNJj0CjILIf/oYB4ivz9WwHuy798+VohEIpFI5P+A6Ce873X/FrzkHgAAAABJRU5ErkJggg==">
+                        <p class="subdued">YouTube</p>
+                    </a>
+                </div>
+                <!-- ng-click="parentAssignments()" -->
+                <div class="col col-33">
+                    <a ui-sref="app.adminassignment({teachers: {{teachersList}}})">
               <img src="img/assignments.png" width="60px" height="50px">
               <p class="subdued">Assignments</p>
             </a>
-          </div>
-          <div class="col col-33" href="javascript:void(0)">
-              <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?phone=919133312647', '_system', 'location=yes'); return false;">
+                </div>
+                <div class="col col-33" href="javascript:void(0)">
+                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?phone=919133312647', '_system', 'location=yes'); return false;">
               <img src="img/whatsapp.png" width="60px" height="50px">
               <p class="subdued">Whats app</p>
             </a>
-          </div>
-      </div>
-    </div>
-
-    <div ng-if="loginDetails.login_type == 'parent'">
-      <div class="row" style="text-align: center">
-          <div class="col col-33">
-            <a href="#/app/exams/{{currentStudentId}}">
+                </div>
+            </div>
+        </div>
+        <div ng-if="loginDetails.login_type == 'parent'">
+            <div class="row" style="text-align: center">
+                <div class="col col-33">
+                    <a href="#/app/exams/{{currentStudentId}}">
             <img src="img/results.png" width="60px" height="50px">
             <p class="subdued">Results</p>
           </a>
-          </div>
-        <div class="col col-33">
-          <a href="#/app/attendance/{{currentStudentId}}">
+                </div>
+                <div class="col col-33">
+                    <a href="#/app/attendance/{{currentStudentId}}">
             <img src="img/attendance.png" width="60px" height="50px">
             <p class="subdued">Attendance</p>
           </a>
-        </div>
-        <div class="col col-33">
-          <a href="#/app/notifications/P">
-            <img src="img/Announ.jpeg" width="60px" height="50px">
-            <p class="subdued">Announcement</p>
-          </a>
-        </div>
-      </div>
-      <div class="row" style="text-align: center">
-        <div class="col col-33">
-          <a href="#/app/chat/{{currentStudentId}}">
-            <img src="img/chat_with_teacher.png" width="60px" height="50px">
-            <p class="subdued">Online Teacher</p>
-          </a>
-        </div>
-
-        <div class="col col-33">
-          <a href="#/app/image-gallery">
-            <img src="img/image_gallery.png" width="60px" height="50px">
-            <p class="subdued">Image Gallery</p>
-          </a>
-        </div>
-        <div class="col col-33">
-          <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/Frobels-Residential-High-School-1244461868958871', '_system', 'location=yes'); return false;">
-            <img src="img/facebook.png" width="60px" height="50px">
-            <p class="subdued">Facebook</p>
-          </a>
-        </div>
-      </div>
-      <!-- https://www.facebook.com/Frobels-Residential-High-School-1244461868958871  openFacebookPage()-->
-      <div class="row" style="text-align: center">
-
-        <div class="col col-33" href="javascript:void(0)">
-          <a href="javascript:void(0)" onclick="window.open('https://www.youtube.com/watch?v=MCoOoxmdHDk', '_system', 'location=yes'); return false;">
-            <img src="img/youtube.png" width="60px" height="50px">
-            <p class="subdued">YouTube</p>
-          </a>
-        </div>
-
-        <!-- ng-click="parentAssignments()" -->
-        <div class="col col-33">
-          <a href="#/app/parentassignmentview/{{currentStudentId}}">
+                </div>
+                <div class="col col-33">
+                    <a href="#/app/notifications/P">
+                        <!-- <img src="img/Announ.jpeg" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWJSURBVGhD7VlrTBxVFKZq4jPxh/7RGE00/jHRGOMf44+adHdnWB7VllofbbFqWqKVVEoaQxPRRnZnZpeWN8XWktpALdjEpJRgW2mt7DzYNSCLvAoCAZpSy6u0wD6v5wwXeQ1lgWXdjXzJ92N37t0939x7zj3n3Kg1rOF/DjZDfoExizok/SryEG0WX4zm5TGGkwiSfh1ZYDn5KaMg9x8ob/NcaBmJTCGqCIvcseeE090+4CMXI1GIjpeeh5W4llTsdDfd8JDOYX/kCTHwtjfBJ0ZTT7V42m56VRERJWR9+qVHWEEqZHnJl3W+m3QM+f4VERlCCFlnMIs7jBbp5js5DteF5pFZAsJeSEKm+CDLiR/FCHJLrEXx5Ff3+NsGprfSXIaVkNh0x0N6sxgHW+goOPOtjZmK21rVRer7XJrGz+SKhDDf2J/Q8cqrU6eqFlmT+D6TIe5XOeuZvFHPiYnw5yksLxfHWWUn7H8XCPDuK212n6rtJzOdeTEuWYiOczwKe/ZLVpC7cOJyGW9R3AnZjvHEovqxA+WtvsJLveScc3BJxs/kkoQwnI2BtzYcf9ju2nemjwiXR0me4iFHHL67MuPisPonWgYEiwELgVV4Dwb69pzq9BfUejUNXohhI0Qv1LzMwP7FVdAydDGGjRDwB1vid80eLSMDYSiFMLz4Chye91HTp4EPGLNErFfuaBoZCEMqBBgtyH1g8xtUwiQMnJi+Ja9+XMvAQBlKIWWNEyS1vMMH+dg4K9Q8R2Vgkiad3n2yQ9PAQBlKIZXtfnIOmPhtg8vASYVURlQU5PyXk3/o0jQwUIZaCPKLM10kRpCqqYypFWnXNDBQ/hcrsqOowQUZRAGVMekjCbmR6SMbzLXPUhnTUcvy621NIwNhKIUgQUQvy4vrqYRpQFJXE0nnyJaysnup6bMxfbL3ahq6GEMphJq8MBiT7V0Y6PsUcq382sUTxZkMKyEIiMt62GaD8Ycc6uqo2a/s1jR+JsNOCAKbAFiPGAWlEycul1BIQT1iH99eWDeeVt7qLajuIWcbBklrKOqRudBx0iYWtltaRT85eH5oHlPKe0mMRSEHK3pV7i5u8kM9Y5uqEBle3g7hfS/437FYq/IHVogQcbx7S/50lyhQId6lRp/LFQlBQIJm23Wy3ae1pUy/jGAoJJVXJ09b/vx1ECb30anzAKv9AGuSjCDoCGQUw/FWqNkrO/2rXrMjDGZpM2wzT4FGALBeua3+eLnTpQopto+qnzeYlMfo9AWBosAnd8ZalKapLkrL35NdRS2uWAibXXk/vME7X1UNzBOCgQC2DTlee0sVUtHmIzDWh0GDTl8chKzDiBkjKNffxr4WGLwqQhCsIJV9fKLNO1cIMiG3jggXrqtCkFvz6vAKIIVODRh6S/3D0byUgy8i6+du/6p0GhmTmBR3yO7SEvJhcSt567Ddu/NY49gHR51jEBy8ek6KplOXDOx7QVY7klra7JkZDIIiRO1twY9kixPzhKSd7UeHnzAIkgBbKsNgElk6bdnAggmCQV/S8YbgduPRT8AXPF9XDc4Tkqe4wS9kL2uWttHhQYGOr3kSImB70O9HjILc+PmPPfOEID8p/csPYbpTsymwAmCnM+g3VpDql+z6/qqmENxy0RCisatOhwcNeIfIckG8Q2Q4kdtW5NR0eORnUC6zgtxKhwcVQb3VhbeRvCn79wUrSWwn4RszWmzP0CnhCfWEtyhuLRHIHMmlCsHahk4JT8Ch+BIaqhWCkcmnuzF6DS1YvYUL0tPJPXBeXMMEstA+2eTOsk2Q/T9dI1vz611YYWJCSIeHN/QZ4uuQRozEZdonNudiKiL6QdwNAy9m67jfnqbDIgOxVsfj9CYqmTHVvIYrRR+tYQ0qoqL+AUCB6f5vHgloAAAAAElFTkSuQmCC">
+                        <p class="subdued">Announcement</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="text-align: center">
+                <div class="col col-33">
+                    <a href="#/app/chat/{{currentStudentId}}">
+                        <!-- <img src="img/chat_with_teacher.png" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,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">
+                        <p class="subdued">Online Teacher</p>
+                    </a>
+                </div>
+                <div class="col col-33">
+                    <a href="#/app/image-gallery">
+                        <!-- <img src="img/image_gallery.png" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQgSURBVGhD7ZlZbExhGIbbM7VGwo0tggZx5cKSEnEjEWJJiCuldhViD6o3lib2SFCk9rWYM63qpmg71BpC7VstpZQLNIKZM9NO6ef7/nOmc2bmU2M4MzfnTZ5kMuf/3/995+yZGFOmTJkyZcrUf1CcTRlokZ3pFtmxNzyc6XGykqDZRUlWdzyGcVlsTvgn0CMmy9VNc428JJtjAhssDMhLs428cPFJXKhwIC/N9v8rTv4+RJIdyySbM5UDA1gDA/0DVm4NAWagLFqsvxMaTGEWix6yowELJWnxQhdOOscaRhHKpMULXZLsvMqZhUrrbCf0OKPAwBKXoEehIr7jxgbSIVeBMVfc0CVf8fueMmnxQle4RRIw9KqHHjhV/QMKP/hD363EbQNwDDeX6F3kgpq6BiB98zRA/2Lf2IgU6Yi/4vonHr/gmRUO2HrzI2xD6LN+2zoc2x7nBPqselgnSni1/bmncZvhRXoXKXD0Tb0ImFNVCzNP3Ifui7MhdsJ+P+KXZEOy9YEYQ2NpTi+cq/dKulGrVVC16E5d4zZDi9CeOF6llthx+zN0micHFQikM47ZWf5ZLYNzycPrF4ekPaqDGzU/YfMzD7TUnVeGFaFFt+BiFCj91idoNfUIG5yDxtIcmrvpqe/waQrDigyxu0SQrEo3tJ9zkg0cRCJxQHymOdlv1MNsMHpxa+gxrMhG/CUpRNLh8uDAeqYeg9j5eSAtLwYp9YJKSinELiqEYbtuCo8NIewVQ4q0y1Eg//0PKEA6zLXyBRIPqgW84RmaYSEqkoc+5Mmt5cWQIv3w+k4BMu7W8CUmHgBp8Vk2fCBpVz4Ir77nmz68DCkyrMwtFl9b9o4vsqCADc0x41SF8CJPbi0vhhQZcUktstpeFVxiWiYb+HdMlp8Kr+HRKEKPGbQ4XUKDiiwMfW8QqfZq4aV/HOEwpEjHPAUKcPH86npoOzPTrwhdkbjAHJaUEsh96xFe3COLHkOKENufq3f0sbuu+4pMOsQG/h09110SHtsq6tk19BhWZPRl9TyhB8I204+qRSYfYQNzWFaUQsb9L8JjJHpxa+gxrEjzLCfsfqXeFOmkt+All+7aXGiOJO0kz3jpEV7cGnoMK0LQ06v33WNlyWtoPQ33yNJzbHAvtCcSTz4Rc2guvXRx3oEYWoQYhFewHK3Mocdfoc/6MpAwbFCJFXbomlYGW8trGkvQXM6Tw/AiBL2T7Kv0vVjJlS6YnfsSRu2/i9yD5NMvQH6tnlMEjQ18F/kTESlCtMDjfPy1WtijnTcctG3c1VoxlvNoiogV0RNf6IKhF90wHkMT9LlbQeiHEUd4RWxOO2cWTTBTqRYvdOGkFM4smmCm5Vq8v9AakHBXJltsjj2+vwCiBGbAErMok5bOlClTpkyZMhWsmJhf/7iE+Nps5G4AAAAASUVORK5CYII=">
+                        <p class="subdued">Image Gallery</p>
+                    </a>
+                </div>
+                <div class="col col-33">
+                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/Frobels-Residential-High-School-1244461868958871', '_system', 'location=yes'); return false;">
+                        <!-- <img src="img/facebook.png" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIPSURBVGhD7ZnLSwJRGMWl/ojqj9GpVtEDZgTtvWghVKsWQcuQWkUPCAqEoNBdrcqZygKF3mEPMip30SIqjKDIIiJvc/VzpPwEnSHvTNwDv5V3jufMfSzm2ri4uLj+l1yuxUpBCrY5JCXgEJXNMuO3O5VW2/BwBcTRJ7u0VuMQ5aggKYQxh4JLroZYpYnOhDoLB4gpK/Z0zQxdTogZU9LLrFTRPYGZsYTuGYhXvARRCWNmTFEzQbzi5ZDkbdSMITQTxCtef12koz9CRiZPyfTcBfH54xp9Q7voeIqpirg9YXIceySF5AvE0ecopinS2Bkit/dJiIzLEkVm5y8hbmFZosjxWf6S+vpKkfOrJ3J0lkjjnThFn6WYpsjdwxvEz4nOEjYWwzRFnl8+IH5OQ6NRdCyGaYq8Jj8hfk6WKFLnXCXtvRGN5Ft+kbGZ2I8xTV0bqBeFWRF63Jaq0SkTbnY9RTyDO6gXxTJFUilCGtrXUS+KZYo8JN5RnyzMitQ6FdLcvaGBnVre8RPtd1oc88nCrMhvLHv8/oYXAXgRzMwIvAjAi2BmRuBFAF4EMzMCkyJ/8cnUaBF9n0xFxY+aGWApeE1WQjc/6BnYQsdi6PuIbcJrBUGSXRCveGWu3JS9fDNm6LvooYKrt33EtNzs1rcsV0EsnVLfglrGrZotwAVl2cj8p+w2fBnKxcXFZTLZbN9S86sn1aGunQAAAABJRU5ErkJggg==">
+                        <p class="subdued">Facebook</p>
+                    </a>
+                </div>
+            </div>
+            <!-- https://www.facebook.com/Frobels-Residential-High-School-1244461868958871  openFacebookPage()-->
+            <div class="row" style="text-align: center">
+                <div class="col col-33" href="javascript:void(0)">
+                    <a href="javascript:void(0)" onclick="window.open('https://www.youtube.com/watch?v=MCoOoxmdHDk', '_system', 'location=yes'); return false;">
+                        <!-- <img src="img/youtube.png" width="60px" height="50px"> -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKcSURBVGhD7Zk7aBRRFIZP0kmamFpDsAwaGxFxZ3ctomIp+KiinWmsFRIIVjFgE7cQkm3FgGjrg2Djo7AwWCQgFis2iggiJtgY7vG/w1nQeI57JztxZ/B+8LPMzn18Z2dmd/YORSKRSCQS6QJ3hIZchQ66Kp1EziOT2L7KVZrzwXYDWdiSRrovoetp24QuuRqdw/sn8N4YtnfL8PnCRP2Y5DAmmUKayCNsr+F1A0K8E8HY6zKHn2sRr1PeAS59opUNfDr7MMgLbbJeBMU8906iF0Z62iT0Thuwl4FTy7uJZmdQvT+X1cF6HbjdFM2/489FNP6kDVKEpG64dkXXxtVpjzZAkYJi9oquDVco0ToXKhU6Jro2uKAm1M6hOT7APL5L35dX8PsjujYoZEbtHJqLB5g/tJinT+v788mc6Nrg/LuldAyPL6TNqyfME6N6uy4CxyXRtcERua11Ds6vhXg2fzDfazCfGtTbbyMoZFl0bVDIfa1zcLYW0ubrZ+Ybk8z1fr1fhsBxRXRtUO1DrXNwrELavF1hvlzT+wYGhbRE1waFPNM6B6dTIR7nmJfvMJ8Z1sfoEDi+F10bNHqtdQ5OSCFtvq8zN6czf13D8Yvo2pSikIQ+iq5NSU6tN6Jrg0ZluNhfiq5NSb5+H4uuDRoV/gcRuSu6Nji1in+LklBTdG3QqAw3jddE1waFFP423lXogujalOGPlatRVXRtSvFXF46ia1OSxYewxTo0Lu5yUELzotkZWaBraQP1MqlT1vVhrtMIjkx39105BkU89U6il430ejlKhzCIX0heRB4gq8g3bbI8grn+XMSGQ/B1kRV8OoP49tiPQz2OnPVLNJj0CjILIf/oYB4ivz9WwHuy798+VohEIpFI5P+A6Ce873X/FrzkHgAAAABJRU5ErkJggg==">
+                        <p class="subdued">YouTube</p>
+                    </a>
+                </div>
+                <!-- ng-click="parentAssignments()" -->
+                <div class="col col-33">
+                    <a href="#/app/parentassignmentview/{{currentStudentId}}">
             <img src="img/assignments.png" width="60px" height="50px">
             <p class="subdued">Assignments</p>
           </a>
-        </div>
-
-        <div class="col col-33" href="javascript:void(0)">
-          <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?phone=919133312647', '_system', 'location=yes'); return false;">
+                </div>
+                <div class="col col-33" href="javascript:void(0)">
+                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?phone=919133312647', '_system', 'location=yes'); return false;">
             <img src="img/whatsapp.png" width="60px" height="50px">
             <p class="subdued">Whats app</p>
           </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div ng-if="loginDetails.login_type == 'teacher'">
-        <div class="list">
-            <a class="item item-thumbnail-left" href="#/app/notifications/T">
-              <img src="img/Announ.jpeg" width="60px" height="50px">
-              <p class="subdued">Announcement</p>
-            </a>
-
-            <a class="item item-thumbnail-left" href="javascript:void(0)" ng-click="textParent()">
-              <img src="img/chat_with_teacher.png" width="60px" height="50px">
-              <p class="subdued">Online Teacher</p>
-            </a>
-
-
-            <a class="item item-thumbnail-left" href="#/app/image-gallery">
-            <img src="img/image_gallery.png" width="60px" height="50px">
-            <p class="subdued">Image Gallery</p>
-          </a>
-      
-          <a class="item item-thumbnail-left" href="javascript:void(0)" onclick="window.open('https://www.facebook.com/Frobels-Residential-High-School-1244461868958871', '_system', 'location=yes'); return false;">
-            <img src="img/facebook.png" width="60px" height="50px">
-            <p class="subdued">Facebook</p>
-          </a>
-
-        <!--
+        <div ng-if="loginDetails.login_type == 'teacher'">
+            <div class="list">
+                <a class="item item-thumbnail-left" href="#/app/notifications/T">
+                    <!-- <img src="img/Announ.jpeg" width="60px" height="50px"> -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWJSURBVGhD7VlrTBxVFKZq4jPxh/7RGE00/jHRGOMf44+adHdnWB7VllofbbFqWqKVVEoaQxPRRnZnZpeWN8XWktpALdjEpJRgW2mt7DzYNSCLvAoCAZpSy6u0wD6v5wwXeQ1lgWXdjXzJ92N37t0939x7zj3n3Kg1rOF/DjZDfoExizok/SryEG0WX4zm5TGGkwiSfh1ZYDn5KaMg9x8ob/NcaBmJTCGqCIvcseeE090+4CMXI1GIjpeeh5W4llTsdDfd8JDOYX/kCTHwtjfBJ0ZTT7V42m56VRERJWR9+qVHWEEqZHnJl3W+m3QM+f4VERlCCFlnMIs7jBbp5js5DteF5pFZAsJeSEKm+CDLiR/FCHJLrEXx5Ff3+NsGprfSXIaVkNh0x0N6sxgHW+goOPOtjZmK21rVRer7XJrGz+SKhDDf2J/Q8cqrU6eqFlmT+D6TIe5XOeuZvFHPiYnw5yksLxfHWWUn7H8XCPDuK212n6rtJzOdeTEuWYiOczwKe/ZLVpC7cOJyGW9R3AnZjvHEovqxA+WtvsJLveScc3BJxs/kkoQwnI2BtzYcf9ju2nemjwiXR0me4iFHHL67MuPisPonWgYEiwELgVV4Dwb69pzq9BfUejUNXohhI0Qv1LzMwP7FVdAydDGGjRDwB1vid80eLSMDYSiFMLz4Chye91HTp4EPGLNErFfuaBoZCEMqBBgtyH1g8xtUwiQMnJi+Ja9+XMvAQBlKIWWNEyS1vMMH+dg4K9Q8R2Vgkiad3n2yQ9PAQBlKIZXtfnIOmPhtg8vASYVURlQU5PyXk3/o0jQwUIZaCPKLM10kRpCqqYypFWnXNDBQ/hcrsqOowQUZRAGVMekjCbmR6SMbzLXPUhnTUcvy621NIwNhKIUgQUQvy4vrqYRpQFJXE0nnyJaysnup6bMxfbL3ahq6GEMphJq8MBiT7V0Y6PsUcq382sUTxZkMKyEIiMt62GaD8Ycc6uqo2a/s1jR+JsNOCAKbAFiPGAWlEycul1BIQT1iH99eWDeeVt7qLajuIWcbBklrKOqRudBx0iYWtltaRT85eH5oHlPKe0mMRSEHK3pV7i5u8kM9Y5uqEBle3g7hfS/437FYq/IHVogQcbx7S/50lyhQId6lRp/LFQlBQIJm23Wy3ae1pUy/jGAoJJVXJ09b/vx1ECb30anzAKv9AGuSjCDoCGQUw/FWqNkrO/2rXrMjDGZpM2wzT4FGALBeua3+eLnTpQopto+qnzeYlMfo9AWBosAnd8ZalKapLkrL35NdRS2uWAibXXk/vME7X1UNzBOCgQC2DTlee0sVUtHmIzDWh0GDTl8chKzDiBkjKNffxr4WGLwqQhCsIJV9fKLNO1cIMiG3jggXrqtCkFvz6vAKIIVODRh6S/3D0byUgy8i6+du/6p0GhmTmBR3yO7SEvJhcSt567Ddu/NY49gHR51jEBy8ek6KplOXDOx7QVY7klra7JkZDIIiRO1twY9kixPzhKSd7UeHnzAIkgBbKsNgElk6bdnAggmCQV/S8YbgduPRT8AXPF9XDc4Tkqe4wS9kL2uWttHhQYGOr3kSImB70O9HjILc+PmPPfOEID8p/csPYbpTsymwAmCnM+g3VpDql+z6/qqmENxy0RCisatOhwcNeIfIckG8Q2Q4kdtW5NR0eORnUC6zgtxKhwcVQb3VhbeRvCn79wUrSWwn4RszWmzP0CnhCfWEtyhuLRHIHMmlCsHahk4JT8Ch+BIaqhWCkcmnuzF6DS1YvYUL0tPJPXBeXMMEstA+2eTOsk2Q/T9dI1vz611YYWJCSIeHN/QZ4uuQRozEZdonNudiKiL6QdwNAy9m67jfnqbDIgOxVsfj9CYqmTHVvIYrRR+tYQ0qoqL+AUCB6f5vHgloAAAAAElFTkSuQmCC">
+                    <p class="subdued">Announcement</p>
+                </a>
+                <a class="item item-thumbnail-left" href="javascript:void(0)" ng-click="textParent()">
+                    <!-- <img src="img/chat_with_teacher.png" width="60px" height="50px"> -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAXWSURBVGhD7ZlpTFxVFMfB+kHrF41JXSJpWIZFjbHK0hoELIGhZWYgERjAQmdaqGyFsk2hsU5CbSTSWKldaMHQioBSpIUOi0kjH0z1izRuTdpEG0GbmFRrUYtQ4B7Pfdyhw3CY4b1Z2hj+yS8zGe495//nvnvfY/BZ0f9VlZWVa6qrqy9VVVXdcMA1HHMF+QzfH8A5WrPZvFqUuDeE5lRobhpfQQ445298bTGZTGGi1N0TywwIZ/qAtpvZT//zS84LsBSjuRFwyRANX+YlQFdhOuytKLttE2gWX0/U1NQ8Ksp6TywtMIjp/ftBHwBKmNUHwo+5kXC0xDBhDYT8irwsWnheGKAEV2GCMqiEy1s3wL6K4nEeBldnCskWrTwjiI29H0Ocosy4yr9ZIXC01CiFQWbwMMgUbd0rSPdZxTL8eygT7oJfbh1F+j+tK4Ov4aK9+4QhjlPN3Q0Pc6g0zxrmJ1yZh4QF14UNDPYNPcmtrFB+qt0Ul9nbwoZrYpl+T+JqjFMNPcmIMWZGBJnAlXlc2FEu0PufpBq5RHYggCGY/pkAT0Wo31X4hwhTJ+woE2SrAvCUmqYaKSJHBbA/CqBnE8BpNYDRcZiRbbHWVfkZ7fjOuVIgyPCvpxrIxhgC0PASQF8ywKD2Dh0Jc+GoOcgEHsmmqkp+1wfc9M8KW/KFe2OMarBs8kMBGqMBLJqFAWxpiwd4LYiejxzeabzFg+A+KRS25Inp14ZRhZdF8TMAx2LRqIMAtjTHAWThviFqDezQ8kuLB3lfWJMnlu6/jSrskPLnAFo30madcSQGIHNxza+2x1uDnBHW5Akvq3fsi5Jk4m9y9/MA7Xi9Uwbl8C7uI7v6F42x1iDnhTV5wiDt9kUXwI9Q84sAXXj6UKaUwk81mz42Qb4Q1uSJZQT02hacx/YIpYy4gzfD5/u5IYi/ZUGApY5QTzCAh8Tude4Nwraq/nJ6hHqCfg2wgrDfrEHKy8svRCcnP4LW5N0Y8U/YISlIY8QM2cgL8N48SGp2LkSpUxgCkeqUaxHq1A3CpmNB69oH2N6gMek4PBRBNvEK2Lt7SzwPsYDIRN3yLjPWHlwEnfgc1IAb+0gk3QTp37MOzNqn4HBuENz4OJEcQ/F7Z6I0h8/lNagxEti7qTRxURBkVFh1LNapOiMF4fTyO/TiJldb4qBG/cQ8nTvxbk6Mo+jAsbZzeS1qHO/dVKt2JUiwxVmQy8diFpg5VYjPVcQ4ipMFYQvmXsFa1Dg3BFHtcRZkFo/I1tdDJSP7UvxgTMajyWjrK1CX6ifN5TV4LWqcy0Fwsz/MOoJHHQWxMt6dBNMKjmY+h8+lfjYP9u7bH7soSGRiyoiw6lzQjn9UdaiG4ewSy+4NsPftj4KH4zQpF60h1ielsqjElFeFzeWL9W/6gGziBdjA5mbJhNl8X5Yhvyi/sBjKdpV/K30mV2xAU0418QZsUFcmbPBv/LfzOzxiER/JExvSJlBNvAHr124UNnzwWetDEUTZ10PQp1nNBjVTVCNPwga1k+yTtAe5h9ra2scwCP8XBJhMpvWSMSXCy6uXauZJMEiPaM///9LGQ2CYC+IjZcLLK4lq5kn4JY2tfTFAnQgxhfskas6RC2ID2mGq4VJMWrRwtkEHvQd0MHWOHrMUuBrnKyoqgtH8OR5CBFH2LYq92FByJIZhVGOK0h26+RtYTm4aDB83OOXzJgP0NubBGzUV36Nx6fssZBLfG4QN9wj3Sh1l2h6+AtYQVvCykH6zy4UHQT7FlQkV7d0nAB9fvgkp8/bkbLmzIrr0NOg+mO+U1vqCqxjiLTyZjBh8jWjrGc0dx9p+yrwt109r4WCNDt6r1cH1bnqMLbjaFl5btPGOoCt9FYZpoAwpQ1PPa4ry3hc/lvE3+QNtzjl4o/2ODSarRbm7K8AHOjakMXJTlFkKPP2+4XP4XFHm3hKzbA7DVSrBUC3SfWdA+zWHv0ea8fNifBAMEcNXtKIVeUU+Pv8BolqGAmUQYQYAAAAASUVORK5CYII=">
+                    <p class="subdued">Online Teacher</p>
+                </a>
+                <a class="item item-thumbnail-left" href="#/app/image-gallery">
+                    <!-- <img src="img/image_gallery.png" width="60px" height="50px"> -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQgSURBVGhD7ZlZbExhGIbbM7VGwo0tggZx5cKSEnEjEWJJiCuldhViD6o3lib2SFCk9rWYM63qpmg71BpC7VstpZQLNIKZM9NO6ef7/nOmc2bmU2M4MzfnTZ5kMuf/3/995+yZGFOmTJkyZcrUf1CcTRlokZ3pFtmxNzyc6XGykqDZRUlWdzyGcVlsTvgn0CMmy9VNc428JJtjAhssDMhLs428cPFJXKhwIC/N9v8rTv4+RJIdyySbM5UDA1gDA/0DVm4NAWagLFqsvxMaTGEWix6yowELJWnxQhdOOscaRhHKpMULXZLsvMqZhUrrbCf0OKPAwBKXoEehIr7jxgbSIVeBMVfc0CVf8fueMmnxQle4RRIw9KqHHjhV/QMKP/hD363EbQNwDDeX6F3kgpq6BiB98zRA/2Lf2IgU6Yi/4vonHr/gmRUO2HrzI2xD6LN+2zoc2x7nBPqselgnSni1/bmncZvhRXoXKXD0Tb0ImFNVCzNP3Ifui7MhdsJ+P+KXZEOy9YEYQ2NpTi+cq/dKulGrVVC16E5d4zZDi9CeOF6llthx+zN0micHFQikM47ZWf5ZLYNzycPrF4ekPaqDGzU/YfMzD7TUnVeGFaFFt+BiFCj91idoNfUIG5yDxtIcmrvpqe/waQrDigyxu0SQrEo3tJ9zkg0cRCJxQHymOdlv1MNsMHpxa+gxrMhG/CUpRNLh8uDAeqYeg9j5eSAtLwYp9YJKSinELiqEYbtuCo8NIewVQ4q0y1Eg//0PKEA6zLXyBRIPqgW84RmaYSEqkoc+5Mmt5cWQIv3w+k4BMu7W8CUmHgBp8Vk2fCBpVz4Ir77nmz68DCkyrMwtFl9b9o4vsqCADc0x41SF8CJPbi0vhhQZcUktstpeFVxiWiYb+HdMlp8Kr+HRKEKPGbQ4XUKDiiwMfW8QqfZq4aV/HOEwpEjHPAUKcPH86npoOzPTrwhdkbjAHJaUEsh96xFe3COLHkOKENufq3f0sbuu+4pMOsQG/h09110SHtsq6tk19BhWZPRl9TyhB8I204+qRSYfYQNzWFaUQsb9L8JjJHpxa+gxrEjzLCfsfqXeFOmkt+All+7aXGiOJO0kz3jpEV7cGnoMK0LQ06v33WNlyWtoPQ33yNJzbHAvtCcSTz4Rc2guvXRx3oEYWoQYhFewHK3Mocdfoc/6MpAwbFCJFXbomlYGW8trGkvQXM6Tw/AiBL2T7Kv0vVjJlS6YnfsSRu2/i9yD5NMvQH6tnlMEjQ18F/kTESlCtMDjfPy1WtijnTcctG3c1VoxlvNoiogV0RNf6IKhF90wHkMT9LlbQeiHEUd4RWxOO2cWTTBTqRYvdOGkFM4smmCm5Vq8v9AakHBXJltsjj2+vwCiBGbAErMok5bOlClTpkyZMhWsmJhf/7iE+Nps5G4AAAAASUVORK5CYII=">
+                    <p class="subdued">Image Gallery</p>
+                </a>
+                <a class="item item-thumbnail-left" href="javascript:void(0)" onclick="window.open('https://www.facebook.com/Frobels-Residential-High-School-1244461868958871', '_system', 'location=yes'); return false;">
+                    <!-- <img src="img/facebook.png" width="60px" height="50px"> -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIPSURBVGhD7ZnLSwJRGMWl/ojqj9GpVtEDZgTtvWghVKsWQcuQWkUPCAqEoNBdrcqZygKF3mEPMip30SIqjKDIIiJvc/VzpPwEnSHvTNwDv5V3jufMfSzm2ri4uLj+l1yuxUpBCrY5JCXgEJXNMuO3O5VW2/BwBcTRJ7u0VuMQ5aggKYQxh4JLroZYpYnOhDoLB4gpK/Z0zQxdTogZU9LLrFTRPYGZsYTuGYhXvARRCWNmTFEzQbzi5ZDkbdSMITQTxCtef12koz9CRiZPyfTcBfH54xp9Q7voeIqpirg9YXIceySF5AvE0ecopinS2Bkit/dJiIzLEkVm5y8hbmFZosjxWf6S+vpKkfOrJ3J0lkjjnThFn6WYpsjdwxvEz4nOEjYWwzRFnl8+IH5OQ6NRdCyGaYq8Jj8hfk6WKFLnXCXtvRGN5Ft+kbGZ2I8xTV0bqBeFWRF63Jaq0SkTbnY9RTyDO6gXxTJFUilCGtrXUS+KZYo8JN5RnyzMitQ6FdLcvaGBnVre8RPtd1oc88nCrMhvLHv8/oYXAXgRzMwIvAjAi2BmRuBFAF4EMzMCkyJ/8cnUaBF9n0xFxY+aGWApeE1WQjc/6BnYQsdi6PuIbcJrBUGSXRCveGWu3JS9fDNm6LvooYKrt33EtNzs1rcsV0EsnVLfglrGrZotwAVl2cj8p+w2fBnKxcXFZTLZbN9S86sn1aGunQAAAABJRU5ErkJggg==">
+                    <p class="subdued">Facebook</p>
+                </a>
+                <!--
         <div class="col col-33" href="javascript:void(0)">
           <img src="img/whatsapp.png" width="60px" height="50px">
           <p class="subdued">Whatsapp</p>
         </div>
       -->
-
-        <a class="item item-thumbnail-left" href="javascript:void(0)" onclick="window.open('https://www.youtube.com/watch?v=MCoOoxmdHDk', '_system', 'location=yes'); return false;">
-          <img src="img/youtube.png" width="60px" height="50px">
-          <p class="subdued">YouTube</p>
-        </a>
-
-        <a class="item item-thumbnail-left" href="#/app/teacherassignmentview">
+                <a class="item item-thumbnail-left" href="javascript:void(0)" onclick="window.open('https://www.youtube.com/watch?v=MCoOoxmdHDk', '_system', 'location=yes'); return false;">
+                    <!-- <img src="img/youtube.png" width="60px" height="50px"> -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKcSURBVGhD7Zk7aBRRFIZP0kmamFpDsAwaGxFxZ3ctomIp+KiinWmsFRIIVjFgE7cQkm3FgGjrg2Djo7AwWCQgFis2iggiJtgY7vG/w1nQeI57JztxZ/B+8LPMzn18Z2dmd/YORSKRSCQS6QJ3hIZchQ66Kp1EziOT2L7KVZrzwXYDWdiSRrovoetp24QuuRqdw/sn8N4YtnfL8PnCRP2Y5DAmmUKayCNsr+F1A0K8E8HY6zKHn2sRr1PeAS59opUNfDr7MMgLbbJeBMU8906iF0Z62iT0Thuwl4FTy7uJZmdQvT+X1cF6HbjdFM2/489FNP6kDVKEpG64dkXXxtVpjzZAkYJi9oquDVco0ToXKhU6Jro2uKAm1M6hOT7APL5L35dX8PsjujYoZEbtHJqLB5g/tJinT+v788mc6Nrg/LuldAyPL6TNqyfME6N6uy4CxyXRtcERua11Ds6vhXg2fzDfazCfGtTbbyMoZFl0bVDIfa1zcLYW0ubrZ+Ybk8z1fr1fhsBxRXRtUO1DrXNwrELavF1hvlzT+wYGhbRE1waFPNM6B6dTIR7nmJfvMJ8Z1sfoEDi+F10bNHqtdQ5OSCFtvq8zN6czf13D8Yvo2pSikIQ+iq5NSU6tN6Jrg0ZluNhfiq5NSb5+H4uuDRoV/gcRuSu6Nji1in+LklBTdG3QqAw3jddE1waFFP423lXogujalOGPlatRVXRtSvFXF46ia1OSxYewxTo0Lu5yUELzotkZWaBraQP1MqlT1vVhrtMIjkx39105BkU89U6il430ejlKhzCIX0heRB4gq8g3bbI8grn+XMSGQ/B1kRV8OoP49tiPQz2OnPVLNJj0CjILIf/oYB4ivz9WwHuy798+VohEIpFI5P+A6Ce873X/FrzkHgAAAABJRU5ErkJggg==">
+                    <p class="subdued">YouTube</p>
+                </a>
+                <a class="item item-thumbnail-left" href="#/app/teacherassignmentview">
           <img src="img/assignments.png" width="60px" height="50px">
           <p class="subdued">Assignments</p>
         </a>
-          <a class="item item-thumbnail-left" href="#/app/teacherAttendanceView">
+                <a class="item item-thumbnail-left" href="#/app/teacherAttendanceView">
             <img src="img/attendance.png" width="60px" height="50px">
             <p class="subdued">Attendance</p>
           </a>
+            </div>
         </div>
-    </div>
-  </ion-content>
+    </ion-content>
 </ion-view>

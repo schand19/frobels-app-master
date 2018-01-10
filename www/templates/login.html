@@ -1,33 +1,36 @@
-
 <ion-view cache-view="false">
-  <ion-header-bar align-title="center" class="bar bar-header bar-positive">
-    <h1 class="title">Login</h1>
-  </ion-header-bar>
-  <ion-content >
-    <div class="greeting">Welcome to </div>
-    <div class="selectedSchool">{{selectedSchool}}</div>
-    <form>
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username" autocapitalize="off">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password" autocapitalize="off">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit" ng-click="doLogin()">Log in</button>
-        </label>
-        <a ng-href="javascript:void(0)" ng-click="takeMeToFindSchool()">Not your School?</a>
-      </div>
-    </form>
-    <div class="padding">
-      <button class="button button-small button-balanced" ng-click="forgotPassword()">Forgot Password</button>
-      <button class="button button-small button-balanced" style="position: absolute; right: 9px" ng-click="changePassword()">Change Password</button>
-    </div>
-  </ion-content>
-
+    <ion-header-bar align-title="center" class="bar bar-header bar-positive">
+        <h1 class="title">Login</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="greeting">Welcome to </div>
+        <div class="selectedSchool">{{selectedSchool}}</div>
+        <br></br>
+        <br></br>
+        <form>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Username</span>
+                    <input type="text" ng-model="loginData.username" autocapitalize="off">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="loginData.password" autocapitalize="off">
+                </label>
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit" ng-click="doLogin()">Log in</button>
+                </label>
+                <div class="padding">
+                    <btton ng-href="javascript:void(0)" class="button button-clear button-positive" ng-click="takeMeToFindSchool()">Not your School?</button>
+                    </btton>
+                </div>
+            </div>
+        </form>
+        <div class="padding">
+            <button class="button button-clear button-positive" ng-click="forgotPassword()">Forgot Password</button>
+            <button class="button button-clear button-positive" style="position: absolute; right: 9px" ng-click="changePassword()">Change Password</button>
+        </div>
+    </ion-content>
 </ion-view>
 <!--
 <ion-modal-view>

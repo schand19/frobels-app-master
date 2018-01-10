@@ -1,30 +1,29 @@
 <ion-view view-title="Chat">
-  <ion-content>
-    <div class="list padding" ng-show="teachersList.length > 0">
-      <div>
-        <span>Click on this icon <i class="icon ion-person"></i> to view Teacher profile</span>
-      </div>
-      <div>
-        <span>Click on Teacher name to view the chat with Parents</span>
-      </div>
-      <div class="item bar-stable item-input-inset">
+    <ion-content>
+        <div class="list padding" ng-show="teachersList.length > 0">
+            <div>
+                <span>Click on this icon <i class="icon ion-person"></i> to view Teacher profile</span>
+            </div>
+            <div>
+                <span>Click on Teacher name to view the chat with Parents</span>
+            </div>
+            <div class="item bar-stable item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" style="width: 95%" ng-model="teacherListFilter.value" placeholder="Please filter list using any keyword">
+                </label>
+            </div>
+            <div class="item item-text-wrap item-icon-right" ng-repeat="teacher in teachersList | filter: teacherListFilter.value">
+                <a href="#/app/adminparentlistview/{{teacher.emp_id}}" class="text-subdued-frobels" style="text-decoration: underline; color: #387ef5; margin-left: 27px;">{{teacher.emp_name | uppercase}}</a>
+                <i class="icon ion-person" style="position: absolute; left: 0px; right: auto;" ui-sref="app.viewprofile({type: 'teacher', personId: {{teacher.emp_id}}})"></i>
+                <a ng-click="textTeacher(teacher)" class="text-subdued-frobels" style="text-decoration: underline; color: #387ef5; padding: 3px; float: right; font-size: 13px;">Chat</a>
+                <i class="icon icon-accessory ion-chevron-right"></i>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" ng-if="footer.view">
         <label class="item-input-wrapper">
-          <input type="text" style="width: 95%" ng-model="teacherListFilter.value" placeholder="Please filter list using any keyword">
+            <input type="text" placeholder="Please enter your message" ng-model="data.message">
         </label>
-      </div>
-
-      <div class="item item-text-wrap item-icon-right" ng-repeat="teacher in teachersList | filter: teacherListFilter.value">
-        <a href="#/app/adminparentlistview/{{teacher.emp_id}}" class="text-subdued-frobels" style="text-decoration: underline; color: #387ef5; margin-left: 27px;">{{teacher.emp_name | uppercase}}</a>
-        <i class="icon ion-person" style="position: absolute; left: 0px; right: auto;" ui-sref="app.viewprofile({type: 'teacher', personId: {{teacher.emp_id}}})"></i>
-          <a ng-click="textTeacher(teacher)" class="text-subdued-frobels" style="text-decoration: underline; color: #387ef5; padding: 3px; float: right; font-size: 13px;">Chat</a>
-        <i class="icon icon-accessory ion-chevron-right"></i>
-      </div>
-    </div>
-  </ion-content>
-   <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" ng-if="footer.view">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Please enter your message" ng-model="data.message">
-    </label>
-    <button class="button button-calm" ng-click="sendMessage()">Send</button>
-  </ion-footer-bar>
+        <button class="button button-calm" ng-click="sendMessage()">Send</button>
+    </ion-footer-bar>
 </ion-view>
