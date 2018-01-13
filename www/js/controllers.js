@@ -40,6 +40,10 @@
               $state.go('app.feedetails');
           }
 
+          $scope.getFoodMenu = function() {
+              $state.go('app.foodMenu');
+          }
+
           $scope.showProfile = function() {
               if (window.localStorage.getItem('login_type') == 'teacher') {
                   $state.go('app.viewprofile', { type: window.localStorage.getItem('login_type'), personId: JSON.parse(window.localStorage.getItem('loginDetails')).object_id });
@@ -147,8 +151,7 @@
                               }
                           )
                       },
-                      function(error) {
-                      }
+                      function(error) {}
                   )
               } else {
                   alert('Please fill all the details');
@@ -181,8 +184,7 @@
                               }
                           )
                       },
-                      function(error) {
-                      }
+                      function(error) {}
                   )
               } else {
                   $cordovaToast.showShortTop('Please fill all the details').then(
@@ -261,8 +263,7 @@
                       function(response) {
                           $scope.imageSlides = response.data.images;
                       },
-                      function(error) {
-                      }
+                      function(error) {}
                   )
           };
           $scope.getImages();
@@ -415,8 +416,7 @@
                       $scope.chatHistoryList = response.data.chats;
                       $scope.getTechersList(studentId, $scope.loginDetails.object_id);
                   },
-                  function(error) {
-                  }
+                  function(error) {}
               )
           };
 
@@ -514,10 +514,8 @@
               delete $scope.data.message;
 
               MessageService.sendMessage(requestParams).then(
-                  function(response) {
-                  },
-                  function(error) {
-                  }
+                  function(response) {},
+                  function(error) {}
               )
               $ionicScrollDelegate.scrollBottom(true);
           };
@@ -551,8 +549,7 @@
                       $scope.chatHistoryList = response.data.chats;
                       $scope.addMessagesOfChatHistory();
                   },
-                  function(error) {
-                  }
+                  function(error) {}
               )
               //$ionicScrollDelegate.scrollBottom(true);
           }, 5000);
@@ -566,10 +563,8 @@
               };
 
               ChatService.updatMessageRead(requestParams).then(
-                  function(response) {
-                  },
-                  function(error) {
-                  }
+                  function(response) {},
+                  function(error) {}
               );
               $ionicScrollDelegate.scrollBottom(true);
           };
@@ -1007,8 +1002,7 @@
                                   function(success) {
                                       $state.go('app.dashboard');
                                   },
-                                  function(error) {
-                                  }
+                                  function(error) {}
                               )
                           }
                       },
@@ -1089,7 +1083,7 @@
           $scope.formatDate = function() {
               if ($scope.searchData) {
                   $scope.formattedDate = $scope.selectedDate.getMonth() + 1 + '/' + $scope.selectedDate.getDate() + '/' + $scope.selectedDate.getFullYear();
-                  
+
               }
           }
 
@@ -1276,11 +1270,16 @@
           }
 
           $scope.searchSchool = function(enteredSchool) {
+              
               $scope.matchingSchools = [];
               schoolsList.filter(function(school) {
+                if(enteredSchool != ""){
                   if (school.toLowerCase().indexOf(enteredSchool.toLowerCase()) != -1) {
                       $scope.matchingSchools.push(school);
                   }
+                } else {
+                  $scope.matchingSchools = [];
+                }
               });
           }
 
@@ -1418,8 +1417,7 @@
                       $scope.examname = response.data.exam_names;
                       $scope.marksdiv.display = true;
                   },
-                  function(error) {
-                  }
+                  function(error) {}
               )
 
           };
@@ -1470,6 +1468,36 @@
 
           };
 
+      }])
+
+      .controller('FoodMenuController', ["$scope", function($scope) {
+
+          $scope.foodMenu = {
+              lunch: ['Rice', 'Daal', 'Sweet', 'Alu fry', 'Sambhar', 'Curd'],
+              dinner: ['Rice', 'Daal', 'Sweet', 'Alu fry', 'Sambhar'],
+              breakfast: ['Bread', 'Milk'],
+              supper: ['Mirapa Bajji']
+          };
+
+          $scope.menuItems = $scope.foodMenu.breakfast;
+          $scope.isActive = 'bf';
+
+          $scope.getLunchMenu = function() {
+              $scope.menuItems = $scope.foodMenu.lunch;
+              $scope.isActive = 'l';
+          }
+          $scope.getDinnerMenu = function() {
+              $scope.menuItems = $scope.foodMenu.dinner;
+              $scope.isActive = 'd';
+          }
+          $scope.getBreakfastMenu = function() {
+              $scope.menuItems = $scope.foodMenu.breakfast;
+              $scope.isActive = 'bf';
+          }
+          $scope.getSupperMenu = function() {
+              $scope.menuItems = $scope.foodMenu.supper;
+              $scope.isActive = 's';
+          }
       }])
 
 

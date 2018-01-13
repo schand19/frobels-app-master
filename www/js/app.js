@@ -424,6 +424,16 @@ angular.module('Forbels', ['ionic', 'ngCordova', 'Forbels.controllers', 'Forbels
                 }
             })
 
+            .state('app.foodMenu',{
+              url:'/foodMenu',
+              views:{
+                'menuContent':{
+                  templateUrl:'templates/foodMenu.html',
+                  controller : 'FoodMenuController'
+                }
+              }
+            })
+
         /*
         .state('app.techercreateassignment', {
           url: '/createassignment',
